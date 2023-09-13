@@ -3,7 +3,7 @@ import java.utils.Scanner;
 public class SideChooser
 {
     private boolean isFirst = true;
-    public static void Run() {
+    public static void run() {
         Scanner input = new Scanner(System.in);
         System.out.println("Would you like to go First or Second?")
         String sideChosen = input.nextLine();

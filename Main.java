@@ -1,10 +1,10 @@
 import java.utils.Scanner;
+import SideChooser;
 
 public class Main
 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
         System.out.println("Do you want to play Hexapawn? Y/N");
         String playHexapawn = input.nextLine();
         while (!(playHexapawn.equals("N")) && !(playHexapawn.equals("Y"))) {
@@ -12,7 +12,7 @@ public class Main
             playHexapawn = input.nextLine();
         }
         if (playHexapawn.equals("Y")) {
-            System.out.println("Which player would you like to be?");
+            SideChooser.run();
         }
         else {
             System.out.println("Why would you run this then? If you're QA then please quit your job and leave me alone.")

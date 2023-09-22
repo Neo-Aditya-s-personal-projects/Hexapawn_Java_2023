@@ -11,5 +11,14 @@ public class SideChooser
             System.out.println("Invalid response, would you like to go First or Second?")
         }
         isFirst = sideChosen.equals("First");
+        if (isFirst) {
+
+        }
+        else{
+            
+        }
+    }
+    public static boolean playerIsFirst() {
+        return isFirst;
     }
 }

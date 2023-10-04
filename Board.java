@@ -1,45 +1,45 @@
 public class Board
 {
-    private String[] positions = {"0", "1", "2", "3", "4", "5", "6", "7", "8"};
+    private String[] board = {"0", "1", "2", "3", "4", "5", "6", "7", "8"};
     private char aiChar;
     private char playerChar;
-    public static void SetupBoard(char aiChar, char playerChar) {
+    public static void setupBoard(char aiChar, char playerChar) {
         this.aiChar = aiChar;
         this.playerChar = playerChar;
-        positions[0] = playerChar;
-        positions[1] = playerChar;
-        positions[2] = playerChar;
-        positions[6] = aiChar;
-        positions[7] = aiChar;
-        positions[8] = aiChar;
+        board[0] = playerChar;
+        board[1] = playerChar;
+        board[2] = playerChar;
+        board[6] = aiChar;
+        board[7] = aiChar;
+        board[8] = aiChar;
     }
-    public static boolean UpdateBoard(int initialPosition, int finalposition, boolean isPlayer) {
+    public static boolean updateBoard(int initialPosition, int finalposition, boolean isPlayer) {
         boolean isValid = true;
         if (isPlayer) {
         isValid = (((finalposition - initialPosition) <= 6) && (finalposition > initialPosition));
-        boolean isValidPiece = ((positions[initialPosition].equals(playerChar)) && !(position[initialPosition].equals(position[finalposition])));
-        boolean isValidMovement = ValidMovement(initialPosition, finalPosition);
+        boolean isValidPiece = ((board[initialPosition].equals(playerChar)) && !(position[initialPosition].equals(position[finalposition])));
+        boolean isValidMovement = validMovement(initialPosition, finalPosition);
         isValid = (isValidPiece && isValidMovement);
         }
         if (isValid) {
-            positions[finalPosition] = positions[initialPosition];
-            positions[initialPosition] = initialPosition;
+            board[finalPosition] = board[initialPosition];
+            board[initialPosition] = initialPosition;
         }
     }
 
-    private static boolean ValidMovement(int initialPosition, int finalposition) {
-        if(positions[finalPosition].equals(aiChar)) {
-            return ValidCapture(initialPosition, finalPosition);
+    private static boolean validMovement(int initialPosition, int finalposition) {
+        if(board[finalPosition].equals(aiChar)) {
+            return validCapture(initialPosition, finalPosition);
         }
-        else if(positions[finalPosition].equals(playerChar)) {
+        else if(board[finalPosition].equals(playerChar)) {
             return false;
         }
         else{
             return (finalPosition == (initialPosition + 3));
         }
     }
-    private static boolean ValidCapture(int initialPosition, int finalposition)(
-        if((positions[initialPosition].equals(aiChar)) || (positions[finalPosition].equals(playerChar))) {
+    private static boolean validCapture(int initialPosition, int finalposition)(
+        if((board[initialPosition].equals(aiChar)) || (board[finalPosition].equals(playerChar))) {
             return false;
         }
         if (finalPosition == 4) {

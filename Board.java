@@ -18,7 +18,8 @@ public class Board
         if (isPlayer) {
         isValid = (((finalposition - initialPosition) <= 6) && (finalposition > initialPosition));
         boolean isValidPiece = ((positions[initialPosition].equals(playerChar)) && !(position[initialPosition].equals(position[finalposition])));
-        boolean isValidMovement = isValidPiece && ValidMovement(initialPosition, finalPosition);
+        boolean isValidMovement = ValidMovement(initialPosition, finalPosition);
+        isValid = (isValidPiece && isValidMovement);
         }
     }
 
@@ -34,7 +35,7 @@ public class Board
         }
     }
     private static boolean ValidCapture(int initialPosition, int finalposition)(
-        if((positions[initialPosition].equals(aiChar)) || (positions[finalPosition].equals(playerChar))) {
+        if((positions[finalPosition].equals(aiChar)) || (positions[initialPosition].equals(playerChar))) {
             return false;
         }
         if (finalPosition == 4) {

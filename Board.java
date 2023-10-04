@@ -21,11 +21,15 @@ public class Board
         boolean isValidMovement = ValidMovement(initialPosition, finalPosition);
         isValid = (isValidPiece && isValidMovement);
         }
+        if (isValid) {
+            positions[finalPosition] = positions[initialPosition];
+            positions[initialPosition] = initialPosition;
+        }
     }
 
     private static boolean ValidMovement(int initialPosition, int finalposition) {
         if(positions[finalPosition].equals(aiChar)) {
-            return ValidCapture(initialPosition, finalPosition)
+            return ValidCapture(initialPosition, finalPosition);
         }
         else if(positions[finalPosition].equals(playerChar)) {
             return false;
@@ -35,7 +39,7 @@ public class Board
         }
     }
     private static boolean ValidCapture(int initialPosition, int finalposition)(
-        if((positions[finalPosition].equals(aiChar)) || (positions[initialPosition].equals(playerChar))) {
+        if((positions[initialPosition].equals(aiChar)) || (positions[finalPosition].equals(playerChar))) {
             return false;
         }
         if (finalPosition == 4) {

@@ -30,15 +30,15 @@ public class Board
 
     public static void displayBoard() {
         displayBoard = {board[0] + "/0", board[1] + "/1", board[2] + "/2", board[3] + "/3", board[4] + "/4", board[5] + "/5", board[6] + "/6", board[7] + "/7", board[8] + "/8"};
-        System.out.println("     |     |      ");
+        System.out.println("       |       |      ");
         System.out.println("  " + displayBoard[0] + "  |  " + displayBoard[1]"  |  " + displayBoard[2]);
-        System.out.println("_____|_____|_____ ");
-        System.out.println("     |     |      ");
+        System.out.println("_______|_______|_____ ");
+        System.out.println("       |       |      ");
         System.out.println("  " + displayBoard[3] + "  |  " + displayBoard[4] + "  |  " + displayBoard[5]);
-        System.out.println("_____|_____|_____ ");
-        System.out.println("     |     |      ");
+        System.out.println("_______|_______|_____ ");
+        System.out.println("       |       |      ");
         System.out.println("  " + displayBoard[6] + "  |  " + displayBoard[7] + "  |  " + displayBoard[8]);
-        System.out.println("     |     |      ");
+        System.out.println("       |       |      ");
     }
 
     private static boolean validMovement(int initialPosition, int finalposition) {

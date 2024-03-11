@@ -1,5 +1,4 @@
-import java.utils.Scanner;
-import SideChooser;
+import java.util.Scanner;
 
 public class Main
 {
@@ -12,10 +11,11 @@ public class Main
             playHexapawn = input.nextLine();
         }
         if (playHexapawn.equals("Y")) {
-            SideChooser.run();
+            SideChooser sideChooser = new SideChooser(input);
+            sideChooser.PickSide();
         }
         else {
-            System.out.println("Why would you run this then? If you're QA then please quit your job and leave me alone.")
+            System.out.println("Why would you run this then? If you're QA then please quit your job and leave me alone.");
         }
     }
 }

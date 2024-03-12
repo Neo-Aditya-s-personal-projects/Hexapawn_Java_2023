@@ -50,5 +50,17 @@ public enum BotMovementTurnStates {
     public static String[] Turn6State11Beads = {"Blue", "Purple"};
 
     public static int[] turnTwoMove(BotMovementTurnStates botMovementTurnState) {
+        int[] i = {1, 2, 3};
+        return i;
+    }
+
+    public static BotMovementTurnStates getBotMovementTurnStates(int turnCount, Board board) {
+        if (turnCount == 2) {
+            return (board.getBoardSegmentWithoutNumbers(4) == null) ? BotMovementTurnStates.Turn2State2: BotMovementTurnStates.Turn2State1
+        }
+        if (turnCount == 4) {
+            
+        }
+        return null;
     }
 }

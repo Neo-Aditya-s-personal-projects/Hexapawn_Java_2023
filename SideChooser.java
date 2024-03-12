@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
-public class SideChooser
-{
+public class SideChooser {
     private boolean isFirst = true;
     private final Scanner input;
 
@@ -17,6 +16,7 @@ public class SideChooser
         }
         isFirst = sideChosen.equals("First");
     }
+
     public boolean playerIsFirst() {
         return isFirst;
     }

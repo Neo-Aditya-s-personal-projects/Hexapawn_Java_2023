@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
-public class Main
-{
+public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Do you want to play Hexapawn? Y/N");
@@ -13,9 +12,9 @@ public class Main
         if (playHexapawn.equals("Y")) {
             SideChooser sideChooser = new SideChooser(input);
             sideChooser.PickSide();
-        }
-        else {
-            System.out.println("Why would you run this then? If you're QA then please quit your job and leave me alone.");
+        } else {
+            System.out
+                    .println("Why would you run this then? If you're QA then please quit your job and leave me alone.");
         }
     }
 }

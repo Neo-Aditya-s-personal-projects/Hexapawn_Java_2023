@@ -33,4 +33,15 @@ public class Board {
     public void setBoardSegment(int position, char character) {
         board[position] = character;
     }
+
+    public char getBoardSegment(int position) {
+        return board[position];
+    }
+
+    public Character getBoardSegmentWithoutNumbers(int position) {
+        if (board[position] > 48 && board[position] < 57) {
+            return null;
+        }
+        return board[position];
+    }
 }

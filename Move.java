@@ -9,7 +9,7 @@ public class Move {
         this.botPiece = botPiece;
     }
 
-    public boolean Move(int startPosition, int endPosition, boolean playerTurn) {
+    public boolean MovPiece(int startPosition, int endPosition, boolean playerTurn) {
         if ((board.getBoardSegmentWithoutNumbers(startPosition) == board.getBoardSegmentWithoutNumbers(endPosition)) || board.getBoardSegmentWithoutNumbers(startPosition) == null) {
             return false;
         }

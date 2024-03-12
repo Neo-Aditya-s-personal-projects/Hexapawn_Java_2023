@@ -7,7 +7,7 @@ public class Board {
     }
 
     public void resetBoard() {
-        for (int i = 6; i > board.length; i++) {
+        for (int i = 0; i < board.length; i++) {
             board[i] = (char) (i + 48);
         }
         for (int i = 0; i < displayBoard.length; i++) {

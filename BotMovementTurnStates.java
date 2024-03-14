@@ -54,12 +54,20 @@ public enum BotMovementTurnStates {
         return i;
     }
 
-    public static BotMovementTurnStates getBotMovementTurnStates(int turnCount, Board board) {
+    public static BotMovementTurnStates getBotMovementTurnStates(int turnCount, Board board, char botPiece, char playerPiece) {
         if (turnCount == 2) {
-            return (board.getBoardSegmentWithoutNumbers(4) == null) ? BotMovementTurnStates.Turn2State2: BotMovementTurnStates.Turn2State1
+            return (board.getBoardSegmentWithoutNumbers(4) == null) ? Turn2State2: Turn2State1;
         }
         if (turnCount == 4) {
-            
+            if (board.getBoardSegmentWithoutNumbers(4) == null) {
+                if (board.getBoardSegmentWithoutNumbers(7) == null) {
+                    return (board.getBoardSegmentWithoutNumbers(3) == null || board.getBoardSegmentWithoutNumbers(5) == null) ? Turn4State4 : Turn4State10;
+                }
+                return Turn4State3;
+            }
+            if (board.getBoardSegmentWithoutNumbers(4) == botPiece) {
+                
+            }
         }
         return null;
     }

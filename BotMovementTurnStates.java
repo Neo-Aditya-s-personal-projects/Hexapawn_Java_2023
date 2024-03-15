@@ -94,6 +94,6 @@ public enum BotMovementTurnStates {
         if (board.getBoardSegmentWithoutNumbers(3) == botPiece) {
             return (board.getBoardSegmentWithoutNumbers(8) == botPiece) ? Turn6State7 : Turn6State2;
         }
-        return (board.getBoardSegmentWithoutNumbers(3) == playerPiece) ? Turn6State4 : Turn6State2;
+        return (board.getBoardSegmentWithoutNumbers(3) == playerPiece) ? Turn6State4 : Turn6State3;
     }
 }

@@ -81,9 +81,19 @@ public enum BotMovementTurnStates {
         }
         if (board.getBoardSegmentWithoutNumbers(7) != null) {
             if (board.getBoardSegmentWithoutNumbers(4) == playerPiece) {
-                
+                return (board.getBoardSegmentWithoutNumbers(3) == playerPiece) ? Turn6State9 : Turn6State1;
             }
+            return (board.getBoardSegmentWithoutNumbers(3) == playerPiece) ? Turn6State6 : Turn6State11;
         }
-        return null;
+        if (board.getBoardSegmentWithoutNumbers(4) == botPiece) {
+            if (board.getBoardSegment(5) == playerPiece) {
+                return (board.getBoardSegment(8) == playerPiece) ? Turn6State10 : Turn6State3;
+            }
+            return Turn6State5;
+        }
+        if (board.getBoardSegmentWithoutNumbers(3) == botPiece) {
+            return (board.getBoardSegmentWithoutNumbers(8) == botPiece) ? Turn6State7 : Turn6State2;
+        }
+        return (board.getBoardSegmentWithoutNumbers(3) == playerPiece) ? Turn6State4 : Turn6State2;
     }
 }

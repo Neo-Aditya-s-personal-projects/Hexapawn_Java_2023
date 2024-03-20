@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public enum BotMovementTurnStates {
     Turn2State1,
     Turn2State2,
@@ -49,7 +51,38 @@ public enum BotMovementTurnStates {
     public static String[] Turn6State10Beads = {"Purple", "Orange"};
     public static String[] Turn6State11Beads = {"Blue", "Purple"};
 
-    public static int[] turnTwoMove(BotMovementTurnStates botMovementTurnState) {
+    public static HashMap<BotMovementTurnStates, String[]> statesToBeads = new HashMap<BotMovementTurnStates, String[]>();
+
+    private static void HashMapSetUp() {
+    statesToBeads.putIfAbsent(Turn2State1, Turn2State1Beads);
+    statesToBeads.putIfAbsent(Turn2State2, Turn2State2Beads);
+    statesToBeads.putIfAbsent(Turn4State1, Turn4State1Beads);
+    statesToBeads.putIfAbsent(Turn4State2, Turn4State2Beads);
+    statesToBeads.putIfAbsent(Turn4State3, Turn4State3Beads);
+    statesToBeads.putIfAbsent(Turn4State4, Turn4State4Beads);
+    statesToBeads.putIfAbsent(Turn4State5, Turn4State5Beads);
+    statesToBeads.putIfAbsent(Turn4State6, Turn4State6Beads);
+    statesToBeads.putIfAbsent(Turn4State7, Turn4State7Beads);
+    statesToBeads.putIfAbsent(Turn4State8, Turn4State8Beads);
+    statesToBeads.putIfAbsent(Turn4State9, Turn4State9Beads);
+    statesToBeads.putIfAbsent(Turn4State10, Turn4State10Beads);
+    statesToBeads.putIfAbsent(Turn4State11, Turn4State11Beads);
+    statesToBeads.putIfAbsent(Turn6State1, Turn6State1Beads);
+    statesToBeads.putIfAbsent(Turn6State2, Turn6State2Beads);
+    statesToBeads.putIfAbsent(Turn6State3, Turn6State3Beads);
+    statesToBeads.putIfAbsent(Turn6State4, Turn6State4Beads);
+    statesToBeads.putIfAbsent(Turn6State5, Turn6State5Beads);
+    statesToBeads.putIfAbsent(Turn6State6, Turn6State6Beads);
+    statesToBeads.putIfAbsent(Turn6State7, Turn6State7Beads);
+    statesToBeads.putIfAbsent(Turn6State8, Turn6State8Beads);
+    statesToBeads.putIfAbsent(Turn6State9, Turn6State9Beads);
+    statesToBeads.putIfAbsent(Turn6State10, Turn6State10Beads);
+    statesToBeads.putIfAbsent(Turn6State11, Turn6State11Beads);
+    }
+
+
+    public static int[] getBotMovement(BotMovementTurnStates botMovementTurnState) {
+        HashMapSetUp();
         int[] i = {1, 2, 3};
         return i;
     }

@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Random;
 
 public enum BotMovementTurnStates {
     Turn2State1,
@@ -25,6 +26,8 @@ public enum BotMovementTurnStates {
     Turn6State9,
     Turn6State10,
     Turn6State11;
+
+    private static Random beadPicker = new Random();
 
     public static String[] Turn2State1Beads = {"Green", "Blue", "Purple"};
     public static String[] Turn2State2Beads = {"Green", "Blue"};
@@ -83,8 +86,9 @@ public enum BotMovementTurnStates {
 
     public static int[] getBotMovement(BotMovementTurnStates botMovementTurnState) {
         HashMapSetUp();
-        int[] i = {1, 2, 3};
-        return i;
+        String[] temp = statesToBeads.get(botMovementTurnState);
+        temp[beadPicker.nextInt()];
+        return null;
     }
 
     public static BotMovementTurnStates getBotMovementTurnStates(int turnCount, Board board, char botPiece, char playerPiece) {
